@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Getting started with webpack and ES6 modules – the demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div class="text-center">
+                        <h1>Test App</h1>
+                        <button id="data-load" class="btn btn-primary">Загрузить данные</button>
+                    </div>
+                    <table id="data-table"
+                           class="table table-stripped"
+                           style="margin-top: 20px;">
+                        <tr id="table-heading">
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>
