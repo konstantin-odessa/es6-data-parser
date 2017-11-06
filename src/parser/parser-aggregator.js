@@ -1,3 +1,6 @@
+/* to add additional parsing functionality, you must
+ * 1. add to TypeEnum enum file format */
+/* 2. add parser class for corresponding file format */
 
 export class ParserAggregator {
     constructor(parsers) {

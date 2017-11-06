@@ -1,4 +1,3 @@
-// import { FormatParser } from '../format-parser';
 import { FormatType } from '../format-type.enum';
 import * as csvToJson from 'csvjson';
 
