@@ -32,7 +32,6 @@ window.addEventListener('load', () => {
                 concatenatedData = data.map(item => item.data.users);
                 /* concatenate data */
                 concatenatedData = concatenatedData.reduce(concatenate, []);
-                // tableHeadingData = Object.keys(concatenatedData[0]);
                 /* get unique heading titles */
                 let uniqueHeadTitles = concatenatedData
                     .reduce((headingHash, headingObj) => {
