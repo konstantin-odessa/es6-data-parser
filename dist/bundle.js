@@ -7086,7 +7086,6 @@ window.addEventListener('load', function () {
             });
             /* concatenate data */
             concatenatedData = concatenatedData.reduce(concatenate, []);
-            // tableHeadingData = Object.keys(concatenatedData[0]);
             /* get unique heading titles */
             var uniqueHeadTitles = concatenatedData.reduce(function (headingHash, headingObj) {
                 Object.keys(headingObj).forEach(function (key) {
