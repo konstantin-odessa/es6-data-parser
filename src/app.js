@@ -1,13 +1,13 @@
 import { DataParser } from './data-parser';
 import { ParserAggregator } from './parser/parser-aggregator';
-// import { CsvParser } from './parser/parsers/csv-parser';
+import { CsvParser } from './parser/parsers/csv-parser';
 import { JsonParser } from './parser/parsers/json-parser';
 import { XmlParser } from './parser/parsers/xml-parser';
 import { FormatType } from './parser/format-type.enum';
 
 /* available file formats and parsers */
 let parserConfig = new Map([
-    // [ FormatType.csv, CsvParser ],
+    [ FormatType.csv, CsvParser ],
     [ FormatType.json, JsonParser ],
     [ FormatType.xml, XmlParser ],
 ]);
@@ -29,10 +29,21 @@ window.addEventListener('load', () => {
                 /* override other formats data objects */
                 rearrange(data);
 
-                /* parsed and concatenated data */
                 concatenatedData = data.map(item => item.data.users);
+                /* concatenate data */
                 concatenatedData = concatenatedData.reduce(concatenate, []);
-                tableHeadingData = Object.keys(concatenatedData[0]);
+                // tableHeadingData = Object.keys(concatenatedData[0]);
+                /* get unique heading titles */
+                let uniqueHeadTitles = concatenatedData
+                    .reduce((headingHash, headingObj) => {
+                        Object.keys(headingObj).forEach(key => {
+                            if (!headingHash[key]) {
+                                headingHash[key] = key;
+                            }
+                        });
+                        return headingHash;
+                    }, {});
+                tableHeadingData = Object.keys(uniqueHeadTitles);
                 dataLoadBtn.disabled = true;
 
                 /* table layout */
