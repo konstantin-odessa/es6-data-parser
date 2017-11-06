@@ -1,7 +1,7 @@
 {
-  "name": "getting_started_with_webpack_and_es6_modules",
+  "name": "es-2015 data parser",
   "version": "0.1.0",
-  "description": "Getting started with webpack and ES6 modules",
+  "description": "es-2015 data parser",
   "scripts": {
     "start": "http-server -p 4200",
     "build": "gulp watch",
